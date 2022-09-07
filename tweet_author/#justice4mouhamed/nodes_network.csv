@@ -1,0 +1,57 @@
+lang,x,y,lang_art,Number_of_connections,spoken
+fi,5,1,lang_out,1,fi
+da,5,31,lang_out,1,da
+it,5,61,lang_out,1,it
+nl,5,91,lang_out,1,nl
+tl,5,121,lang_out,1,tl
+et,5,151,lang_out,1,et
+ru,5,181,lang_out,1,ru
+es,5,211,lang_out,1,es
+ps,5,241,lang_out,1,ps
+ur,5,271,lang_out,1,ur
+sv,5,301,lang_out,1,sv
+qam,5,331,lang_out,1,qam
+pl,5,361,lang_out,1,pl
+und,5,391,lang_out,1,und
+ar,5,421,lang_out,2,ar
+pt,5,451,lang_out,3,pt
+fr,5,481,lang_out,4,fr
+tr,5,511,lang_out,5,tr
+hi,5,541,lang_out,5,hi
+zxx,5,571,lang_out,5,zxx
+qht,5,601,lang_out,11,qht
+qme,5,631,lang_out,20,qme
+en,5,661,lang_out,246,en
+de,5,691,lang_out,841,de
+Denmark,700,1,lang_in,1,da
+SouthAfrican,700,31,lang_in,1,en  zu  ss  af  st  nso  tn  ts  xh  ve  nr
+SouthSlavs,700,61,lang_in,1,bg mk sl kjv ckm sr hr bs
+Malaysia,700,91,lang_in,2,zsm
+South Korea,700,121,lang_in,2,ko
+Japan,700,151,lang_in,2,ja
+Sweden,700,181,lang_in,2,sw
+Baltics,700,211,lang_in,2,et  lv  lt
+Russian,700,241,lang_in,3,ru
+Turkey,700,271,lang_in,3,tr
+Persian,700,301,lang_in,4,fa
+Greek,700,331,lang_in,4,el
+Norway,700,361,lang_in,5,no
+Bangladesh,700,391,lang_in,5,bn
+Romania,700,421,lang_in,7,ro
+Pakistan,700,451,lang_in,7,ur
+ArabianPeninsula,700,481,lang_in,8,ar
+Italy,700,511,lang_in,9,it
+Chinese,700,541,lang_in,11,zh
+Vietnam,700,571,lang_in,13,vi
+Nubian,700,601,lang_in,18,nub 
+WestAfrican,700,631,lang_in,23,fr  pt  en  ar
+Jewish,700,661,lang_in,26,he  iw
+Philippines,700,691,lang_in,38,fil  en
+Portuguese,700,721,lang_in,41,pt
+SouthAsian,700,751,lang_in,51,bn  fa  dz  dv  en  hi  ne  ps  si  ta
+Indonesia,700,781,lang_in,54,in
+Spanish,700,811,lang_in,57,es
+EastAfrican,700,841,lang_in,84,rn  fr  en  zdj  wni  swb  wlc  ar  ti  aa  am  om  so  sw  mg  ny  pt  rw  crs  kck  nmq
+French,700,871,lang_in,152,fr
+CelticEnglish,700,901,lang_in,152,en
+German,700,931,lang_in,368,de
