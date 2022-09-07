@@ -57,7 +57,11 @@
 </svg>
 
 <script>
-
+    var path_hashtags = function getDirectories(path) {
+        return fs.readdirSync(path).filter(function (file) {
+            return fs.statSync(path+'/'+file).isDirectory();
+        });
+    }
     // set the dimensions and margins of the graph
     var margin = {top: 10, right: 20, bottom: 30, left: 50},
         width = 2280 - margin.left - margin.right,
@@ -74,8 +78,8 @@
 
 
     d3.queue()
-        .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/author_author/nodes_network.csv")  // World shape
-        .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/author_author/edge_network.csv") // Position of circles
+        .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/author_author/#abbas/nodes_network.csv")  // World shape
+        .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/author_author/#abbas/edge_network.csv") // Position of circles
         .await(ready);
 
     // function lang_in_out(pos_x){
@@ -87,7 +91,9 @@
 
     //Read the data
     function ready(error, data, edges) {
+        var max_y = d3.max(data, function(d){ return parseInt(d.y)+50});
 
+        console.log("test")
         // Add X axis
         var x = d3.scaleLinear()
             .domain([-200, 750])
@@ -98,7 +104,7 @@
 
         // Add Y axis
         var y = d3.scaleLinear()
-            .domain([-2, 1400])
+            .domain([-2, max_y])
             .range([ height, 0]);
         // svg.append("g")
         //     .call(d3.axisLeft(y));
