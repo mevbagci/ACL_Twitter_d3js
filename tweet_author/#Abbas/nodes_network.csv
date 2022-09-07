@@ -1,0 +1,64 @@
+lang,x,y,lang_art,Number_of_connections,spoken
+iw,5,1,lang_out,1,iw
+eu,5,31,lang_out,1,eu
+cs,5,61,lang_out,1,cs
+pl,5,91,lang_out,1,pl
+ro,5,121,lang_out,1,ro
+ht,5,151,lang_out,1,ht
+pt,5,181,lang_out,1,pt
+da,5,211,lang_out,2,da
+ur,5,241,lang_out,2,ur
+qam,5,271,lang_out,2,qam
+it,5,301,lang_out,3,it
+fa,5,331,lang_out,3,fa
+et,5,361,lang_out,3,et
+fi,5,391,lang_out,4,fi
+in,5,421,lang_out,4,in
+tl,5,451,lang_out,5,tl
+ar,5,481,lang_out,6,ar
+zxx,5,511,lang_out,6,zxx
+tr,5,541,lang_out,6,tr
+sv,5,571,lang_out,7,sv
+es,5,601,lang_out,9,es
+nl,5,631,lang_out,23,nl
+qme,5,661,lang_out,62,qme
+und,5,691,lang_out,63,und
+hi,5,721,lang_out,74,hi
+qht,5,751,lang_out,108,qht
+fr,5,781,lang_out,121,fr
+en,5,811,lang_out,1069,en
+de,5,841,lang_out,2262,de
+Malaysia,700,1,lang_in,1,zsm
+EastEuropean,700,31,lang_in,1,be  bg  cs  hu  ro  ru  sk  uk
+South Korea,700,61,lang_in,1,ko
+Finland,700,91,lang_in,3,fi  sw
+Norway,700,121,lang_in,3,no
+Sweden,700,151,lang_in,3,sw
+Denmark,700,181,lang_in,3,da
+SouthAfrican,700,211,lang_in,4,en  zu  ss  af  st  nso  tn  ts  xh  ve  nr
+Maghreb,700,241,lang_in,5,ar
+SouthSlavs,700,271,lang_in,6,bg mk sl kjv ckm sr hr bs
+Greek,700,301,lang_in,7,el
+Chinese,700,331,lang_in,8,zh
+Romania,700,361,lang_in,10,ro
+Bangladesh,700,391,lang_in,14,bn
+EastAfrican,700,421,lang_in,15,rn  fr  en  zdj  wni  swb  wlc  ar  ti  aa  am  om  so  sw  mg  ny  pt  rw  crs  kck  nmq
+Italy,700,451,lang_in,16,it
+Philippines,700,481,lang_in,16,fil  en
+ArabianPeninsula,700,511,lang_in,19,ar
+Russian,700,541,lang_in,20,ru
+Persian,700,571,lang_in,21,fa
+Pakistan,700,601,lang_in,23,ur
+Turkey,700,631,lang_in,32,tr
+Japan,700,661,lang_in,44,ja
+Nubian,700,691,lang_in,83,nub 
+Portuguese,700,721,lang_in,85,pt
+Indonesia,700,751,lang_in,137,in
+WestAfrican,700,781,lang_in,144,fr  pt  en  ar
+Jewish,700,811,lang_in,145,he  iw
+Spanish,700,841,lang_in,166,es
+French,700,871,lang_in,208,fr
+SouthAsian,700,901,lang_in,210,bn  fa  dz  dv  en  hi  ne  ps  si  ta
+Vietnam,700,931,lang_in,311,vi
+CelticEnglish,700,961,lang_in,477,en
+German,700,991,lang_in,1610,de
