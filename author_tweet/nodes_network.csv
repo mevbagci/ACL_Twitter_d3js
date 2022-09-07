@@ -1,0 +1,64 @@
+lang,x,y,lang_art,Number_of_connections,spoken
+Malaysia,5,1,lang_out,1,zsm
+EastEuropean,5,31,lang_out,1,be  bg  cs  hu  ro  ru  sk  uk
+South Korea,5,61,lang_out,1,ko
+Finland,5,91,lang_out,3,fi  sw
+Norway,5,121,lang_out,3,no
+Sweden,5,151,lang_out,3,sw
+Denmark,5,181,lang_out,3,da
+SouthAfrican,5,211,lang_out,4,en  zu  ss  af  st  nso  tn  ts  xh  ve  nr
+Maghreb,5,241,lang_out,5,ar
+SouthSlavs,5,271,lang_out,6,bg mk sl kjv ckm sr hr bs
+Greek,5,301,lang_out,7,el
+Chinese,5,331,lang_out,8,zh
+Romania,5,361,lang_out,10,ro
+Bangladesh,5,391,lang_out,14,bn
+EastAfrican,5,421,lang_out,15,rn  fr  en  zdj  wni  swb  wlc  ar  ti  aa  am  om  so  sw  mg  ny  pt  rw  crs  kck  nmq
+Italy,5,451,lang_out,16,it
+Philippines,5,481,lang_out,16,fil  en
+ArabianPeninsula,5,511,lang_out,19,ar
+Russian,5,541,lang_out,20,ru
+Persian,5,571,lang_out,21,fa
+Pakistan,5,601,lang_out,23,ur
+Turkey,5,631,lang_out,32,tr
+Japan,5,661,lang_out,44,ja
+Nubian,5,691,lang_out,83,nub 
+Portuguese,5,721,lang_out,85,pt
+Indonesia,5,751,lang_out,137,in
+WestAfrican,5,781,lang_out,144,fr  pt  en  ar
+Jewish,5,811,lang_out,145,he  iw
+Spanish,5,841,lang_out,166,es
+French,5,871,lang_out,208,fr
+SouthAsian,5,901,lang_out,210,bn  fa  dz  dv  en  hi  ne  ps  si  ta
+Vietnam,5,931,lang_out,311,vi
+CelticEnglish,5,961,lang_out,477,en
+German,5,991,lang_out,1610,de
+iw,700,1,lang_in,1,iw
+eu,700,31,lang_in,1,eu
+cs,700,61,lang_in,1,cs
+pl,700,91,lang_in,1,pl
+ro,700,121,lang_in,1,ro
+ht,700,151,lang_in,1,ht
+pt,700,181,lang_in,1,pt
+da,700,211,lang_in,2,da
+ur,700,241,lang_in,2,ur
+qam,700,271,lang_in,2,qam
+it,700,301,lang_in,3,it
+fa,700,331,lang_in,3,fa
+et,700,361,lang_in,3,et
+fi,700,391,lang_in,4,fi
+in,700,421,lang_in,4,in
+tl,700,451,lang_in,5,tl
+ar,700,481,lang_in,6,ar
+zxx,700,511,lang_in,6,zxx
+tr,700,541,lang_in,6,tr
+sv,700,571,lang_in,7,sv
+es,700,601,lang_in,9,es
+nl,700,631,lang_in,23,nl
+qme,700,661,lang_in,62,qme
+und,700,691,lang_in,63,und
+hi,700,721,lang_in,74,hi
+qht,700,751,lang_in,108,qht
+fr,700,781,lang_in,121,fr
+en,700,811,lang_in,1069,en
+de,700,841,lang_in,2262,de

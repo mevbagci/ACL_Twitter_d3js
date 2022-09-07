@@ -74,8 +74,8 @@
 
 
     d3.queue()
-        .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/author_author/nodes_network.csv")  // World shape
-        .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/author_author/edge_network.csv") // Position of circles
+        .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/author_tweet/nodes_network.csv")  // World shape
+        .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/author_tweet/edge_network.csv") // Position of circles
         .await(ready);
 
     // function lang_in_out(pos_x){
@@ -139,7 +139,7 @@
                 .style("fill", "orange")
                 .attr("r", function (d) { return z(d.Number_of_connections)*2; } )
             tooltip
-                .html("Language: "+d.lang+"<br>Number of connections: " + d.Number_of_connections)// + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
+                .html("Language: "+d.lang+"<br>Number of connections: " + d.Number_of_connections+"<br>Spoken: " + d.spoken)// + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
                 .style("left", (d3.mouse(this)[0]+30) + "px")
                 .style("top", (d3.mouse(this)[1]+30) + "px")
             console.log( d3.mouse(this))
