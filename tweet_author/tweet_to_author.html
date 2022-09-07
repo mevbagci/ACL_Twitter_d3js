@@ -74,8 +74,8 @@
 
 
     d3.queue()
-        .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/author_tweet/%23Abbas/nodes_network.csv")  // World shape
-        .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/author_tweet/%23Abbas/edge_network.csv") // Position of circles
+        .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/tweet_author/%23Abbas/nodes_network.csv")  // World shape
+        .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/tweet_author/%23Abbas/edge_network.csv") // Position of circles
         .await(ready);
 
     // function lang_in_out(pos_x){
