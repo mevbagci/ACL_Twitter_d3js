@@ -79,28 +79,29 @@
     // add the options to the button
     // List of groups (here I have one group per column)
 
-    var allGroup = [
-        {
-            "Hashtag": "#justice4mouhamed",
-            "name": "%23justice4mouhamed"
-        },
-        {
-            "Hashtag": "#Winnetou",
-            "name": "%23Winnetou"
-        },
-        {
-            "Hashtag": "#Abbas",
-            "name": "%23Abbas"
-        },
-        {
-            "Hashtag": "#Gamescom",
-            "name": "%23Gamescom"
-        },
-        {
-            "Hashtag": "#Kretschmer",
-            "name": "%23Kretschmer"
-        }
-    ]
+    // var allGroup = [
+    //     {
+    //         "Hashtag": "#justice4mouhamed",
+    //         "name": "%23justice4mouhamed"
+    //     },
+    //     {
+    //         "Hashtag": "#Winnetou",
+    //         "name": "%23Winnetou"
+    //     },
+    //     {
+    //         "Hashtag": "#Abbas",
+    //         "name": "%23Abbas"
+    //     },
+    //     {
+    //         "Hashtag": "#Gamescom",
+    //         "name": "%23Gamescom"
+    //     },
+    //     {
+    //         "Hashtag": "#Kretschmer",
+    //         "name": "%23Kretschmer"
+    //     }
+    // ]
+    d3.json("https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/hashtag_directory.json", function (allGroup) {
     d3.select("#selectButton")
         .selectAll('myOptions')
         .data(allGroup)
@@ -108,6 +109,7 @@
         .append('option')
         .text(function (d) { return d.Hashtag; }) // text showed in the menu
         .attr("value", function (d) { return d.name; })
+        .style("font-size", "34px")
 
     function load_data(hashtag){
         svg.selectAll("*").remove();
@@ -123,14 +125,18 @@
     //     }
     //     else return "lang_in"
     // }
-    load_data("%23Abbas")
+
+
+    //Title of the Site:
+
+    load_data(allGroup[0].name)
     //Read the data
     function ready(error, data, edges) {
         var max_y = d3.max(data, function(d){ return parseInt(d.y)+50});
 
         // Add X axis
         var x = d3.scaleLinear()
-            .domain([-200, 750])
+            .domain([-200, 850])
             .range([ 0, width ]);
         // svg.append("g")
         //     .attr("transform", "translate(0," + height + ")")
@@ -306,11 +312,12 @@
             .append("text")
             .attr("x", function(d){
                 if (d.x==5){return x(d.x)-50}
-                else {return x(d.x)+50}
+                else {return x(d.x)+120}
             })
             .attr("y", function(d){ return(y(d.y))})
             .text(function(d){ return(d.lang)})
             .style("text-anchor", "middle")
+            .style("font-size", "34px")
 
 
 
@@ -434,4 +441,5 @@
             load_data(selectedOption)
         })
     }
+    });
 </script>
