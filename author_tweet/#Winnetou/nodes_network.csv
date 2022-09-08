@@ -1,0 +1,60 @@
+lang,x,y,lang_art,Number_of_connections,spoken
+Baltics,5,1,lang_out,1,et  lv  lt
+EastEuropean,5,31,lang_out,1,be  bg  cs  hu  ro  ru  sk  uk
+Finland,5,61,lang_out,2,fi  sw
+ArabianPeninsula,5,91,lang_out,2,ar
+Bangladesh,5,121,lang_out,2,bn
+South Korea,5,151,lang_out,3,ko
+SouthAfrican,5,181,lang_out,4,en  zu  ss  af  st  nso  tn  ts  xh  ve  nr
+Thailand,5,211,lang_out,4,th
+Malaysia,5,241,lang_out,5,zsm
+Persian,5,271,lang_out,5,fa
+Japan,5,301,lang_out,6,ja
+Denmark,5,331,lang_out,7,da
+Russian,5,361,lang_out,9,ru
+SouthSlavs,5,391,lang_out,9,bg mk sl kjv ckm sr hr bs
+EastAfrican,5,421,lang_out,13,rn  fr  en  zdj  wni  swb  wlc  ar  ti  aa  am  om  so  sw  mg  ny  pt  rw  crs  kck  nmq
+Pakistan,5,451,lang_out,13,ur
+Chinese,5,481,lang_out,15,zh
+Romania,5,511,lang_out,16,ro
+Norway,5,541,lang_out,17,no
+Turkey,5,571,lang_out,19,tr
+Philippines,5,601,lang_out,23,fil  en
+Italy,5,631,lang_out,24,it
+WestAfrican,5,661,lang_out,26,fr  pt  en  ar
+Sweden,5,691,lang_out,26,sw
+Nubian,5,721,lang_out,41,nub 
+Vietnam,5,751,lang_out,43,vi
+Greek,5,781,lang_out,60,el
+SouthAsian,5,811,lang_out,72,bn  fa  dz  dv  en  hi  ne  ps  si  ta
+Indonesia,5,841,lang_out,99,in
+Portuguese,5,871,lang_out,109,pt
+Spanish,5,901,lang_out,151,es
+French,5,931,lang_out,210,fr
+CelticEnglish,5,961,lang_out,342,en
+Jewish,5,991,lang_out,952,he  iw
+German,5,1021,lang_out,1876,de
+tl,700,1,lang_in,1,tl
+ro,700,31,lang_in,1,ro
+pl,700,61,lang_in,1,pl
+eu,700,91,lang_in,1,eu
+cs,700,121,lang_in,1,cs
+art,700,151,lang_in,1,art
+tr,700,181,lang_in,1,tr
+it,700,211,lang_in,1,it
+sv,700,241,lang_in,2,sv
+lt,700,271,lang_in,2,lt
+da,700,301,lang_in,2,da
+ca,700,331,lang_in,3,ca
+no,700,361,lang_in,4,no
+es,700,391,lang_in,4,es
+zxx,700,421,lang_in,4,zxx
+in,700,451,lang_in,4,in
+et,700,481,lang_in,5,et
+fr,700,511,lang_in,12,fr
+qht,700,541,lang_in,45,qht
+qme,700,571,lang_in,60,qme
+nl,700,601,lang_in,65,nl
+und,700,631,lang_in,72,und
+en,700,661,lang_in,155,en
+de,700,691,lang_in,3760,de

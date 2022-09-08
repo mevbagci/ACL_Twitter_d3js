@@ -1,0 +1,89 @@
+lang,x,y,lang_art,Number_of_connections,spoken
+Myanmar,5,1,lang_out,6,my
+Cambodia,5,31,lang_out,7,km
+Denmark,5,61,lang_out,28,da
+Sweden,5,91,lang_out,29,sw
+Maghreb,5,121,lang_out,43,ar
+Thailand,5,151,lang_out,46,th
+Finland,5,181,lang_out,48,fi  sw
+Malaysia,5,211,lang_out,85,zsm
+EastEuropean,5,241,lang_out,117,be  bg  cs  hu  ro  ru  sk  uk
+SouthSlavs,5,271,lang_out,179,bg mk sl kjv ckm sr hr bs
+Norway,5,301,lang_out,179,no
+Russian,5,331,lang_out,179,ru
+Baltics,5,361,lang_out,200,et  lv  lt
+South Korea,5,391,lang_out,289,ko
+Bangladesh,5,421,lang_out,291,bn
+Pakistan,5,451,lang_out,317,ur
+SouthAfrican,5,481,lang_out,413,en  zu  ss  af  st  nso  tn  ts  xh  ve  nr
+Greek,5,511,lang_out,535,el
+Persian,5,541,lang_out,568,fa
+Japan,5,571,lang_out,606,ja
+ArabianPeninsula,5,601,lang_out,613,ar
+Romania,5,631,lang_out,682,ro
+Turkey,5,661,lang_out,729,tr
+Italy,5,691,lang_out,749,it
+Vietnam,5,721,lang_out,1092,vi
+Nubian,5,751,lang_out,1164,nub 
+EastAfrican,5,781,lang_out,1515,rn  fr  en  zdj  wni  swb  wlc  ar  ti  aa  am  om  so  sw  mg  ny  pt  rw  crs  kck  nmq
+Jewish,5,811,lang_out,2044,he  iw
+German,5,841,lang_out,2550,de
+Chinese,5,871,lang_out,2649,zh
+Philippines,5,901,lang_out,2751,fil  en
+WestAfrican,5,931,lang_out,3048,fr  pt  en  ar
+Spanish,5,961,lang_out,3905,es
+Portuguese,5,991,lang_out,5514,pt
+SouthAsian,5,1021,lang_out,5960,bn  fa  dz  dv  en  hi  ne  ps  si  ta
+French,5,1051,lang_out,6578,fr
+Indonesia,5,1081,lang_out,8588,in
+CelticEnglish,5,1111,lang_out,84062,en
+ta,700,1,lang_in,1,ta
+bg,700,31,lang_in,1,bg
+ml,700,61,lang_in,1,ml
+ur,700,91,lang_in,1,ur
+lt,700,121,lang_in,5,lt
+uk,700,151,lang_in,5,uk
+is,700,181,lang_in,6,is
+ru,700,211,lang_in,6,ru
+sr,700,241,lang_in,6,sr
+eu,700,271,lang_in,7,eu
+lv,700,301,lang_in,7,lv
+iw,700,331,lang_in,8,iw
+sv,700,361,lang_in,8,sv
+hu,700,391,lang_in,9,hu
+hi,700,421,lang_in,10,hi
+cy,700,451,lang_in,11,cy
+fi,700,481,lang_in,11,fi
+ro,700,511,lang_in,12,ro
+da,700,541,lang_in,14,da
+no,700,571,lang_in,14,no
+th,700,601,lang_in,15,th
+et,700,631,lang_in,16,et
+el,700,661,lang_in,19,el
+vi,700,691,lang_in,19,vi
+ht,700,721,lang_in,22,ht
+ko,700,751,lang_in,22,ko
+zh,700,781,lang_in,28,zh
+cs,700,811,lang_in,31,cs
+qst,700,841,lang_in,34,qst
+art,700,871,lang_in,38,art
+fa,700,901,lang_in,46,fa
+pl,700,931,lang_in,52,pl
+tl,700,961,lang_in,54,tl
+ca,700,991,lang_in,63,ca
+nl,700,1021,lang_in,69,nl
+it,700,1051,lang_in,99,it
+in,700,1081,lang_in,116,in
+zxx,700,1111,lang_in,118,zxx
+pt,700,1141,lang_in,211,pt
+qam,700,1171,lang_in,225,qam
+ar,700,1201,lang_in,242,ar
+ja,700,1231,lang_in,403,ja
+qht,700,1261,lang_in,536,qht
+tr,700,1291,lang_in,655,tr
+de,700,1321,lang_in,699,de
+fr,700,1351,lang_in,710,fr
+und,700,1381,lang_in,838,und
+es,700,1411,lang_in,1340,es
+qme,700,1441,lang_in,1493,qme
+en,700,1471,lang_in,130002,en
