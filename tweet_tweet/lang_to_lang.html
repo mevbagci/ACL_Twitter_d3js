@@ -114,8 +114,8 @@
         function load_data(hashtag){
             svg.selectAll("*").remove();
             d3.queue()
-                .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/author_tweet/" + hashtag + "/nodes_network.csv")  // World shape
-                .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/author_tweet/" + hashtag + "/edge_network.csv") // Position of circles
+                .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/tweet_tweet/" + hashtag + "/nodes_network.csv")  // World shape
+                .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/tweet_tweet/" + hashtag + "/edge_network.csv") // Position of circles
                 .await(ready);
         }
 
@@ -195,7 +195,7 @@
                     .style("fill", "orange")
                     .attr("r", function (d) { return rad(d.Number_of_connections)*2; } )
                 tooltip
-                    .html("Language: "+d.lang+"<br>Number of connections: " + d.Number_of_connections+"<br>Spoken: " + d.spoken)// + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
+                    .html("Language: "+d.lang+"<br>Number of connections: " + d.Number_of_connections)// + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
                     .style("left", (d3.mouse(this)[0]+30) + "px")
                     .style("top", (d3.mouse(this)[1]+30) + "px")
                     .style("font-size", "34px")
@@ -312,8 +312,8 @@
                 .enter()
                 .append("text")
                 .attr("x", function(d){
-                    if (d.x==5){return x(d.x)-120}
-                    else {return x(d.x)+120}
+                    if (d.x==5){return x(d.x)-50}
+                    else {return x(d.x)+50}
                 })
                 .attr("y", function(d){ return(y(d.y))})
                 .text(function(d){ return(d.lang)})
