@@ -1,0 +1,61 @@
+lang,x,y,lang_art,Number_of_connections,spoken
+da,5,1,lang_out,1,da
+hu,5,31,lang_out,1,hu
+pl,5,61,lang_out,1,pl
+art,5,91,lang_out,1,art
+ro,5,121,lang_out,1,ro
+cs,5,151,lang_out,1,cs
+ru,5,181,lang_out,1,ru
+lt,5,211,lang_out,1,lt
+tr,5,241,lang_out,1,tr
+no,5,271,lang_out,2,no
+it,5,301,lang_out,2,it
+et,5,331,lang_out,2,et
+tl,5,361,lang_out,3,tl
+sv,5,391,lang_out,4,sv
+in,5,421,lang_out,4,in
+fr,5,451,lang_out,4,fr
+es,5,481,lang_out,5,es
+ca,5,511,lang_out,10,ca
+zxx,5,541,lang_out,12,zxx
+qme,5,571,lang_out,33,qme
+und,5,601,lang_out,55,und
+nl,5,631,lang_out,65,nl
+en,5,661,lang_out,159,en
+de,5,691,lang_out,3818,de
+Maghreb,700,1,lang_in,1,ar
+Myanmar,700,31,lang_in,1,my
+Baltics,700,61,lang_in,1,et  lv  lt
+Pakistan,700,91,lang_in,3,ur
+Sweden,700,121,lang_in,4,sw
+SouthAfrican,700,151,lang_in,5,en  zu  ss  af  st  nso  tn  ts  xh  ve  nr
+EastEuropean,700,181,lang_in,5,be  bg  cs  hu  ro  ru  sk  uk
+Finland,700,211,lang_in,6,fi  sw
+Malaysia,700,241,lang_in,6,zsm
+Bangladesh,700,271,lang_in,7,bn
+South Korea,700,301,lang_in,7,ko
+ArabianPeninsula,700,331,lang_in,7,ar
+Persian,700,361,lang_in,10,fa
+SouthSlavs,700,391,lang_in,10,bg mk sl kjv ckm sr hr bs
+Turkey,700,421,lang_in,11,tr
+Denmark,700,451,lang_in,12,da
+Japan,700,481,lang_in,15,ja
+Vietnam,700,511,lang_in,17,vi
+Russian,700,541,lang_in,18,ru
+Norway,700,571,lang_in,25,no
+Italy,700,601,lang_in,30,it
+Romania,700,631,lang_in,31,ro
+Philippines,700,661,lang_in,31,fil  en
+Nubian,700,691,lang_in,32,nub 
+Chinese,700,721,lang_in,35,zh
+EastAfrican,700,751,lang_in,36,rn  fr  en  zdj  wni  swb  wlc  ar  ti  aa  am  om  so  sw  mg  ny  pt  rw  crs  kck  nmq
+Greek,700,781,lang_in,40,el
+WestAfrican,700,811,lang_in,84,fr  pt  en  ar
+SouthAsian,700,841,lang_in,93,bn  fa  dz  dv  en  hi  ne  ps  si  ta
+Indonesia,700,871,lang_in,115,in
+Portuguese,700,901,lang_in,151,pt
+Spanish,700,931,lang_in,178,es
+French,700,961,lang_in,241,fr
+CelticEnglish,700,991,lang_in,475,en
+Jewish,700,1021,lang_in,995,he  iw
+German,700,1051,lang_in,1449,de

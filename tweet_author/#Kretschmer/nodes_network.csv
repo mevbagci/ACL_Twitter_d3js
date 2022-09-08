@@ -1,0 +1,46 @@
+lang,x,y,lang_art,Number_of_connections,spoken
+art,5,1,lang_out,1,art
+uk,5,31,lang_out,1,uk
+ru,5,61,lang_out,1,ru
+in,5,91,lang_out,1,in
+pl,5,121,lang_out,1,pl
+cs,5,151,lang_out,1,cs
+und,5,181,lang_out,2,und
+nl,5,211,lang_out,2,nl
+fr,5,241,lang_out,2,fr
+zxx,5,271,lang_out,6,zxx
+qme,5,301,lang_out,7,qme
+en,5,331,lang_out,25,en
+de,5,361,lang_out,1354,de
+Turkey,700,1,lang_in,1,tr
+Thailand,700,31,lang_in,1,th
+Baltics,700,61,lang_in,1,et  lv  lt
+ArabianPeninsula,700,91,lang_in,2,ar
+South Korea,700,121,lang_in,3,ko
+Denmark,700,151,lang_in,3,da
+Greek,700,181,lang_in,3,el
+Norway,700,211,lang_in,4,no
+SouthSlavs,700,241,lang_in,4,bg mk sl kjv ckm sr hr bs
+Finland,700,271,lang_in,4,fi  sw
+Persian,700,301,lang_in,5,fa
+EastEuropean,700,331,lang_in,5,be  bg  cs  hu  ro  ru  sk  uk
+Russian,700,361,lang_in,6,ru
+Vietnam,700,391,lang_in,6,vi
+Japan,700,421,lang_in,7,ja
+Romania,700,451,lang_in,9,ro
+Malaysia,700,481,lang_in,9,zsm
+EastAfrican,700,511,lang_in,9,rn  fr  en  zdj  wni  swb  wlc  ar  ti  aa  am  om  so  sw  mg  ny  pt  rw  crs  kck  nmq
+Sweden,700,541,lang_in,9,sw
+Italy,700,571,lang_in,12,it
+WestAfrican,700,601,lang_in,13,fr  pt  en  ar
+Philippines,700,631,lang_in,15,fil  en
+Nubian,700,661,lang_in,23,nub 
+Chinese,700,691,lang_in,26,zh
+Spanish,700,721,lang_in,36,es
+SouthAsian,700,751,lang_in,50,bn  fa  dz  dv  en  hi  ne  ps  si  ta
+Indonesia,700,781,lang_in,50,in
+Portuguese,700,811,lang_in,75,pt
+Jewish,700,841,lang_in,76,he  iw
+French,700,871,lang_in,96,fr
+CelticEnglish,700,901,lang_in,213,en
+German,700,931,lang_in,628,de
