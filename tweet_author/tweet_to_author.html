@@ -9,6 +9,9 @@
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
 <!-- Initialize a select button -->
+<div id="text"></div>
+
+<!-- Initialize a select button -->
 <select id="selectButton"></select>
 
 <!-- Create a div where the graph will take place -->
@@ -75,332 +78,324 @@
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
-    var hashtag = "%23Abbas"
-    // add the options to the button
-    // List of groups (here I have one group per column)
-
-    // var allGroup = [
-    //     {
-    //         "Hashtag": "#justice4mouhamed",
-    //         "name": "%23justice4mouhamed"
-    //     },
-    //     {
-    //         "Hashtag": "#Winnetou",
-    //         "name": "%23Winnetou"
-    //     },
-    //     {
-    //         "Hashtag": "#Abbas",
-    //         "name": "%23Abbas"
-    //     },
-    //     {
-    //         "Hashtag": "#Gamescom",
-    //         "name": "%23Gamescom"
-    //     },
-    //     {
-    //         "Hashtag": "#Kretschmer",
-    //         "name": "%23Kretschmer"
-    //     }
-    // ]
     d3.json("https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/hashtag_directory.json", function (allGroup) {
-    d3.select("#selectButton")
-        .selectAll('myOptions')
-        .data(allGroup)
-        .enter()
-        .append('option')
-        .text(function (d) { return d.Hashtag; }) // text showed in the menu
-        .attr("value", function (d) { return d.name; })
-        .style("font-size", "34px")
-
-    function load_data(hashtag){
-        svg.selectAll("*").remove();
-        d3.queue()
-            .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/tweet_author/" + hashtag + "/nodes_network.csv")  // World shape
-            .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/tweet_author/" + hashtag + "/edge_network.csv") // Position of circles
-            .await(ready);
-    }
-
-    // function lang_in_out(pos_x){
-    //     if (pos_x===5){
-    //         return "lang_out"
-    //     }
-    //     else return "lang_in"
-    // }
-
-
-    //Title of the Site:
-
-    load_data(allGroup[0].name)
-    //Read the data
-    function ready(error, data, edges) {
-        var max_y = d3.max(data, function(d){ return parseInt(d.y)+50});
-
-        // Add X axis
-        var x = d3.scaleLinear()
-            .domain([-200, 850])
-            .range([ 0, width ]);
-        // svg.append("g")
-        //     .attr("transform", "translate(0," + height + ")")
-        //     .call(d3.axisBottom(x));
-
-        // Add Y axis
-        var y = d3.scaleLinear()
-            .domain([-2, max_y])
-            .range([ height, 0]);
-        // svg.append("g")
-        //     .call(d3.axisLeft(y));
-
-        // Add a scale for bubble size
-        var z = d3.scaleLinear()
-            .domain([0, 5000])
-            .range([ 4, 20]);
-
-        // scale the radius with a maximum width
-        var rad = function (d) {
-            if (d > 4000) {
-                return z(4000)
-            }
-            else{
-                return z(d)
-            }
-        }
-
-
-        // // Add a scale for bubble color
-        // var myColor = d3.scaleOrdinal()
-        //   .domain(["Asia", "Europe", "Americas", "Africa", "Oceania"])
-        //   .range(d3.schemeSet2);
-
-        // create a tooltip
-        var tooltip = d3.select("#my_dataviz")
-            .append("div")
-            .style("opacity", 0)
-            .attr("class", "tooltip")
-            .style("background-color", "white")
-            .style("border", "solid")
-            .style("border-width", "2px")
-            .style("border-radius", "5px")
-            .style("padding", "5px")
-
-
-        // Three function that change the tooltip when user hover / move / leave a cell
-        var mouseover = function(d) {
-            tooltip
-                .style("opacity", 1)
-                // .html("Language: "+d.lang+"<br>Number of connections: " + d.Number_of_connections)
-                // .style("left", d3.select(this).attr("cx") + "px")
-                // .style("top",  d3.select(this).attr("cy") + "px")
-            d3.select(this)
-                .style("stroke", "black")
-                .style("opacity", 1)
-                .style("fill", "orange")
-                .attr("r", function (d) { return rad(d.Number_of_connections)*2; } )
-            tooltip
-                .html("Language: "+d.lang+"<br>Number of connections: " + d.Number_of_connections+"<br>Spoken: " + d.spoken)// + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
-                .style("left", (d3.mouse(this)[0]+30) + "px")
-                .style("top", (d3.mouse(this)[1]+30) + "px")
-                .style("font-size", "34px")
-            console.log( d3.mouse(this))
-            // console.log(edges)
-            line
-                .style('stroke', function (link_d) {
-                    var source_target = link_d.lang_to_lang.split("_")
-                    if(d.x==5){
-                        if(source_target[0] === d.lang){
-                            return "orange"
-                        }
-                        else {
-                            return  "blue"
-                        }
-                    }
-                    else {
-                        if(source_target[1] === d.lang){
-                            return "orange"
-                        }
-                        else {
-                            return  "blue"
-                        }
-                    }
-                    })
-                .attr("marker-end",function (link_d) {
-                    var source_target = link_d.lang_to_lang.split("_")
-                    if(d.x==5){
-                        if(source_target[0] === d.lang){
-                            console.log(source_target[0])
-                            return "url(#arrow_hover)"
-                        }
-                        else {
-                            return  "url(#arrow)"
-                        }
-                    }
-                    else {
-                        if(source_target[1] === d.lang){
-                            console.log(source_target[1])
-                            return "url(#arrow_hover)"
-                        }
-                        else {
-                            return  "url(#arrow)"
-                        }
-                    }
-                })
-                .style("opacity", function (link_d) {
-                    var source_target = link_d.lang_to_lang.split("_")
-                    if(d.x==5){
-                        if(source_target[0] === d.lang){
-                            return 1.0
-                        }
-                        else {
-                            return  0.0
-                        }
-                    }
-                    else {
-                        if(source_target[1] === d.lang){
-                            return 1.0
-                        }
-                        else {
-                            return  0.0
-                        }
-                    }
-                })
-
-                // .style('stroke-width', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? 4 : 1;})
-        }
-        var source_target = function (d) {
-            d.lang_to_lang.split("_")
-        }
-
-        var mousemove = function(d) {
-            tooltip
-                .style("left", (d3.mouse(this)[0]+30) + "px")
-                .style("top", (d3.mouse(this)[1]+30) + "px")
-        }
-        var mouseleave = function(d) {
-            tooltip
-                .style("opacity", 0)
-            d3.select(this)
-                .style("stroke", "none")
-                .style("opacity", 0.8)
-                .style("fill", "#69b3a2")
-                .attr("r", function (d) { return rad(d.Number_of_connections); } )
-            line
-                .style('stroke', 'blue')
-                .attr("marker-end", "url(#arrow)")
-                .style("opacity", function (d_link){
-                    if (d_link.Number_of_connections<=2){
-                        return (0.1)
-                    }
-                    else if (d_link.Number_of_connections<=10){
-                        return (0.2)
-                    }
-                    else if (d_link.Number_of_connections<=20){
-                        return (0.3)
-                    }
-                    else if (d_link.Number_of_connections<=70){
-                        return (0.4)
-                    }
-                    else if (d_link.Number_of_connections<=200){
-                        return (0.4)
-                    }
-                    else {
-                        return (0.7)
-                    }
-                })
-        }
-
-        var labels = svg
-            .selectAll("mylabels")
-            .data(data)
+        d3.select("#selectButton")
+            .style("font-size", "34px")
+            .selectAll('myOptions')
+            .data(allGroup)
             .enter()
-            .append("text")
-            .attr("x", function(d){
-                if (d.x==5){return x(d.x)-50}
-                else {return x(d.x)+120}
-            })
-            .attr("y", function(d){ return(y(d.y))})
-            .text(function(d){ return(d.lang)})
-            .style("text-anchor", "middle")
+            .append('option')
+            .text(function (d) { return d.Hashtag; }) // text showed in the menu
+            .attr("value", function (d) { return d.name; })
             .style("font-size", "34px")
 
 
 
-        // A function that change this tooltip when the user hover a point.
-        // Its opacity is set to 1: we can now see it. Plus it set the text and position of tooltip depending on the datapoint (d)
-        var mouseover_line = function(d) {
-            tooltip
-                .style("opacity", 1)
-            d3.select(this)
-                .attr("stroke-width",function (d) { return rad(d.Number_of_connections)*2; } )
-                .style("stroke", "orange")
-                .style("opacity", 1)
-                .style("fill", "orange")
-                .attr("marker-end","url(#arrow_hover)")
-            tooltip
-                .html("Language connections: "+d.lang_to_lang+"<br>Number of connections: " + d.Number_of_connections)
-                .style("left", d3.event.pageX + "py") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
-                .style("top", d3.event.pageY + "py")
+        function load_data(hashtag){
+            svg.selectAll("*").remove();
+            d3.select("#text")
+                .style("left", 900+"px")
+                .style("top", 20+"px")
+                .style("right", (margin.right/2)+"px")
+                .style("text-anchor", "middle")
+                .style("position", "absolute")
+                .style("margin", "0 auto")
+                .style("font-size", "34px")
+                .style("text-decoration", "underline")
+                .text("Author to Author: "+hashtag);
+            d3.queue()
+                .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/tweet_author/" + hashtag + "/nodes_network.csv")  // World shape
+                .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/tweet_author/" + hashtag + "/edge_network.csv") // Position of circles
+                .await(ready);
         }
 
-        var mousemove_line = function(d) {
-            tooltip
-                .html("Language connections: "+d.lang_to_lang+"<br>Number of connections: " + d.Number_of_connections)
-                .style("left", d3.event.pageX + "py") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
-                .style("top", d3.event.pageY + "py")
-        }
+        // function lang_in_out(pos_x){
+        //     if (pos_x===5){
+        //         return "lang_out"
+        //     }
+        //     else return "lang_in"
+        // }
 
-        // A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
-        var mouseleave_line = function(d) {
-            tooltip
-                // .transition()
-                // .duration(20)
+
+        //Title of the Site:
+
+        load_data(allGroup[0].name)
+        //Read the data
+        function ready(error, data, edges) {
+            var max_y = d3.max(data, function(d){ return parseInt(d.y)+50});
+
+            // Add X axis
+            var x = d3.scaleLinear()
+                .domain([-200, 850])
+                .range([ 0, width ]);
+            // svg.append("g")
+            //     .attr("transform", "translate(0," + height + ")")
+            //     .call(d3.axisBottom(x));
+
+            // Add Y axis
+            var y = d3.scaleLinear()
+                .domain([-2, max_y])
+                .range([ height, 0]);
+            // svg.append("g")
+            //     .call(d3.axisLeft(y));
+
+            // Add a scale for bubble size
+            var z = d3.scaleLinear()
+                .domain([0, 5000])
+                .range([ 4, 20]);
+
+            // scale the radius with a maximum width
+            var rad = function (d) {
+                if (d > 4000) {
+                    return z(4000)
+                }
+                else{
+                    return z(d)
+                }
+            }
+
+
+            // // Add a scale for bubble color
+            // var myColor = d3.scaleOrdinal()
+            //   .domain(["Asia", "Europe", "Americas", "Africa", "Oceania"])
+            //   .range(d3.schemeSet2);
+
+            // create a tooltip
+            var tooltip = d3.select("#my_dataviz")
+                .append("div")
                 .style("opacity", 0)
-            d3.select(this)
-                .attr("marker-end","url(#arrow)")
-                .attr("stroke-width",function (d) { return rad(d.Number_of_connections); } )
-                .style("stroke", "blue")
-                .style("opacity", function (d){
-                    if (d.Number_of_connections<=2){
-                        return (0.1)
-                    }
-                    else if (d.Number_of_connections<=10){
-                        return (0.2)
-                    }
-                    else if (d.Number_of_connections<=20){
-                        return (0.3)
-                    }
-                    else if (d.Number_of_connections<=70){
-                        return (0.4)
-                    }
-                    else if (d.Number_of_connections<=200){
-                        return (0.4)
-                    }
-                    else {
-                        return (0.7)
-                    }
+                .attr("class", "tooltip")
+                .style("background-color", "white")
+                .style("border", "solid")
+                .style("border-width", "2px")
+                .style("border-radius", "5px")
+                .style("padding", "5px")
+
+
+            // Three function that change the tooltip when user hover / move / leave a cell
+            var mouseover = function(d) {
+                tooltip
+                    .style("opacity", 1)
+                // .html("Language: "+d.lang+"<br>Number of connections: " + d.Number_of_connections)
+                // .style("left", d3.select(this).attr("cx") + "px")
+                // .style("top",  d3.select(this).attr("cy") + "px")
+                d3.select(this)
+                    .style("stroke", "black")
+                    .style("opacity", 1)
+                    .style("fill", "orange")
+                    .attr("r", function (d) { return rad(d.Number_of_connections)*2; } )
+                tooltip
+                    .html("Language: "+d.lang+"<br>Number of connections: " + d.Number_of_connections+"<br>Spoken: " + d.spoken)// + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
+                    .style("left", (d3.event.pageX+50) + "px")
+                    .style("top", (d3.event.pageY+50) + "px")
+                    .style("font-size", "25px")
+                    .style("position", "absolute")
+                console.log( d3.mouse(this))
+                // console.log(edges)
+                line
+                    .style('stroke', function (link_d) {
+                        var source_target = link_d.lang_to_lang.split("_")
+                        if(d.x==5){
+                            if(source_target[0] === d.lang){
+                                return "orange"
+                            }
+                            else {
+                                return  "blue"
+                            }
+                        }
+                        else {
+                            if(source_target[1] === d.lang){
+                                return "orange"
+                            }
+                            else {
+                                return  "blue"
+                            }
+                        }
+                    })
+                    .attr("marker-end",function (link_d) {
+                        var source_target = link_d.lang_to_lang.split("_")
+                        if(d.x==5){
+                            if(source_target[0] === d.lang){
+                                console.log(source_target[0])
+                                return "url(#arrow_hover)"
+                            }
+                            else {
+                                return  "url(#arrow)"
+                            }
+                        }
+                        else {
+                            if(source_target[1] === d.lang){
+                                console.log(source_target[1])
+                                return "url(#arrow_hover)"
+                            }
+                            else {
+                                return  "url(#arrow)"
+                            }
+                        }
+                    })
+                    .style("opacity", function (link_d) {
+                        var source_target = link_d.lang_to_lang.split("_")
+                        if(d.x==5){
+                            if(source_target[0] === d.lang){
+                                return 1.0
+                            }
+                            else {
+                                return  0.0
+                            }
+                        }
+                        else {
+                            if(source_target[1] === d.lang){
+                                return 1.0
+                            }
+                            else {
+                                return  0.0
+                            }
+                        }
+                    })
+
+                // .style('stroke-width', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? 4 : 1;})
+            }
+            var source_target = function (d) {
+                d.lang_to_lang.split("_")
+            }
+
+            var mousemove = function(d) {
+                tooltip
+                    .style("left", (d3.event.pageX+50) + "px")
+                    .style("top", (d3.event.pageY+50) + "px")
+                    .style("position", "absolute")
+            }
+            var mouseleave = function(d) {
+                tooltip
+                    .style("opacity", 0)
+                d3.select(this)
+                    .style("stroke", "none")
+                    .style("opacity", 0.8)
+                    .style("fill", "#69b3a2")
+                    .attr("r", function (d) { return rad(d.Number_of_connections); } )
+                line
+                    .style('stroke', 'blue')
+                    .attr("marker-end", "url(#arrow)")
+                    .style("opacity", function (d_link){
+                        if (d_link.Number_of_connections<=2){
+                            return (0.1)
+                        }
+                        else if (d_link.Number_of_connections<=10){
+                            return (0.2)
+                        }
+                        else if (d_link.Number_of_connections<=20){
+                            return (0.3)
+                        }
+                        else if (d_link.Number_of_connections<=70){
+                            return (0.4)
+                        }
+                        else if (d_link.Number_of_connections<=200){
+                            return (0.4)
+                        }
+                        else {
+                            return (0.7)
+                        }
+                    })
+            }
+
+            var labels = svg
+                .selectAll("mylabels")
+                .data(data)
+                .enter()
+                .append("text")
+                .attr("x", function(d){
+                    if (d.x==5){return x(d.x)-50}
+                    else {return x(d.x)+120}
                 })
-        }
+                .attr("y", function(d){ return(y(d.y))})
+                .text(function(d){ return(d.lang)})
+                .style("text-anchor", "middle")
+                .style("font-size", "34px")
 
 
-        // Add dots
-        var nodes = svg
-            .selectAll("dot")
-            .data(data)
-            .enter()
-            .append("circle")
+
+            // A function that change this tooltip when the user hover a point.
+            // Its opacity is set to 1: we can now see it. Plus it set the text and position of tooltip depending on the datapoint (d)
+            var mouseover_line = function(d) {
+                tooltip
+                    .style("opacity", 1)
+                d3.select(this)
+                    .attr("stroke-width",function (d) { return rad(d.Number_of_connections)*2; } )
+                    .style("stroke", "orange")
+                    .style("opacity", 1)
+                    .style("fill", "orange")
+                    .attr("marker-end","url(#arrow_hover)")
+                tooltip
+                    .html("Language connections: "+d.lang_to_lang+"<br>Number of connections: " + d.Number_of_connections)
+                    .style("left", d3.event.pageX + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+                    .style("top", d3.event.pageY + "px")
+                    .style("font-size", "25px")
+                    .style("position", "absolute")
+            }
+
+            var mousemove_line = function(d) {
+                tooltip
+                    .html("Language connections: "+d.lang_to_lang+"<br>Number of connections: " + d.Number_of_connections)
+                    .style("left", d3.event.pageX+50 + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+                    .style("top", d3.event.pageY+50 + "px")
+                    .style("position", "absolute")
+            }
+
+            // A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
+            var mouseleave_line = function(d) {
+                tooltip
+                    // .transition()
+                    // .duration(20)
+                    .style("opacity", 0)
+                d3.select(this)
+                    .attr("marker-end","url(#arrow)")
+                    .attr("stroke-width",function (d) { return rad(d.Number_of_connections); } )
+                    .style("stroke", "blue")
+                    .style("opacity", function (d){
+                        if (d.Number_of_connections<=2){
+                            return (0.1)
+                        }
+                        else if (d.Number_of_connections<=10){
+                            return (0.2)
+                        }
+                        else if (d.Number_of_connections<=20){
+                            return (0.3)
+                        }
+                        else if (d.Number_of_connections<=70){
+                            return (0.4)
+                        }
+                        else if (d.Number_of_connections<=200){
+                            return (0.4)
+                        }
+                        else {
+                            return (0.7)
+                        }
+                    })
+            }
+
+
+            // Add dots
+            var nodes = svg
+                .selectAll("dot")
+                .data(data)
+                .enter()
+                .append("circle")
                 .attr("class", "myCircle")
                 .attr("cx", function (d) { return x(d.x); } )
                 .attr("cy", function (d) { return y(d.y); } )
                 .attr("r", function (d) { return rad(d.Number_of_connections)})
                 .style("fill", "#69b3a2")
-            .style("stroke", "white")
-            // -3- Trigger the functions
-            .on("mouseover", mouseover )
-            .on("mousemove", mousemove)
-            .on("mouseleave", mouseleave)
+                .style("stroke", "white")
+                // -3- Trigger the functions
+                .on("mouseover", mouseover )
+                .on("mousemove", mousemove)
+                .on("mouseleave", mouseleave)
 
-        var line = svg
-            .selectAll("mylines")
-            .data(edges)
-            .enter()
-            .append("line")
+            var line = svg
+                .selectAll("mylines")
+                .data(edges)
+                .enter()
+                .append("line")
                 .attr("class", "myCircle")
                 .attr("x1",function(d){return(x(d.x_out))+10;})
                 .attr("y1",function(d){return(y(d.y_out));})
@@ -433,14 +428,14 @@
                 .on("mousemove", mousemove_line )
                 .on("mouseleave", mouseleave_line )
 
-        // When the button is changed, run the updateChart function
-        d3.select("#selectButton").on("change", function(d) {
-            // recover the option that has been chosen
-            var selectedOption = d3.select(this).property("value")
-            // run the updateChart function with this selected option
+            // When the button is changed, run the updateChart function
+            d3.select("#selectButton").on("change", function(d) {
+                // recover the option that has been chosen
+                var selectedOption = d3.select(this).property("value")
+                // run the updateChart function with this selected option
 
-            load_data(selectedOption)
-        })
-    }
+                load_data(selectedOption)
+            })
+        }
     });
 </script>

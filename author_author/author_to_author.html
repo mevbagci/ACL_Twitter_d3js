@@ -9,6 +9,9 @@
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
 <!-- Initialize a select button -->
+<div id="text"></div>
+
+<!-- Initialize a select button -->
 <select id="selectButton"></select>
 
 <!-- Create a div where the graph will take place -->
@@ -75,34 +78,9 @@
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
-    var hashtag = "%23Abbas"
-    // add the options to the button
-    // List of groups (here I have one group per column)
-
-    // var allGroup = [
-    //     {
-    //         "Hashtag": "#justice4mouhamed",
-    //         "name": "%23justice4mouhamed"
-    //     },
-    //     {
-    //         "Hashtag": "#Winnetou",
-    //         "name": "%23Winnetou"
-    //     },
-    //     {
-    //         "Hashtag": "#Abbas",
-    //         "name": "%23Abbas"
-    //     },
-    //     {
-    //         "Hashtag": "#Gamescom",
-    //         "name": "%23Gamescom"
-    //     },
-    //     {
-    //         "Hashtag": "#Kretschmer",
-    //         "name": "%23Kretschmer"
-    //     }
-    // ]
     d3.json("https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/hashtag_directory.json", function (allGroup) {
         d3.select("#selectButton")
+            .style("font-size", "34px")
             .selectAll('myOptions')
             .data(allGroup)
             .enter()
@@ -111,8 +89,20 @@
             .attr("value", function (d) { return d.name; })
             .style("font-size", "34px")
 
+
+
         function load_data(hashtag){
             svg.selectAll("*").remove();
+            d3.select("#text")
+                .style("left", 900+"px")
+                .style("top", 20+"px")
+                .style("right", (margin.right/2)+"px")
+                .style("text-anchor", "middle")
+                .style("position", "absolute")
+                .style("margin", "0 auto")
+                .style("font-size", "34px")
+                .style("text-decoration", "underline")
+                .text("Author to Author: "+hashtag);
             d3.queue()
                 .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/author_author/" + hashtag + "/nodes_network.csv")  // World shape
                 .defer(d3.csv, "https://raw.githubusercontent.com/mevbagci/ACL_Twitter_d3js/master/author_author/" + hashtag + "/edge_network.csv") // Position of circles
@@ -196,9 +186,10 @@
                     .attr("r", function (d) { return rad(d.Number_of_connections)*2; } )
                 tooltip
                     .html("Language: "+d.lang+"<br>Number of connections: " + d.Number_of_connections+"<br>Spoken: " + d.spoken)// + d.Prior_disorder + "<br>" + "HR: " +  d.HR)
-                    .style("left", (d3.mouse(this)[0]+30) + "px")
-                    .style("top", (d3.mouse(this)[1]+30) + "px")
-                    .style("font-size", "34px")
+                    .style("left", (d3.event.pageX+50) + "px")
+                    .style("top", (d3.event.pageY+50) + "px")
+                    .style("font-size", "25px")
+                    .style("position", "absolute")
                 console.log( d3.mouse(this))
                 // console.log(edges)
                 line
@@ -270,8 +261,9 @@
 
             var mousemove = function(d) {
                 tooltip
-                    .style("left", (d3.mouse(this)[0]+30) + "px")
-                    .style("top", (d3.mouse(this)[1]+30) + "px")
+                    .style("left", (d3.event.pageX+50) + "px")
+                    .style("top", (d3.event.pageY+50) + "px")
+                    .style("position", "absolute")
             }
             var mouseleave = function(d) {
                 tooltip
@@ -335,15 +327,18 @@
                     .attr("marker-end","url(#arrow_hover)")
                 tooltip
                     .html("Language connections: "+d.lang_to_lang+"<br>Number of connections: " + d.Number_of_connections)
-                    .style("left", d3.event.pageX + "py") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
-                    .style("top", d3.event.pageY + "py")
+                    .style("left", d3.event.pageX + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+                    .style("top", d3.event.pageY + "px")
+                    .style("font-size", "25px")
+                    .style("position", "absolute")
             }
 
             var mousemove_line = function(d) {
                 tooltip
                     .html("Language connections: "+d.lang_to_lang+"<br>Number of connections: " + d.Number_of_connections)
-                    .style("left", d3.event.pageX + "py") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
-                    .style("top", d3.event.pageY + "py")
+                    .style("left", d3.event.pageX+50 + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+                    .style("top", d3.event.pageY+50 + "px")
+                    .style("position", "absolute")
             }
 
             // A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
