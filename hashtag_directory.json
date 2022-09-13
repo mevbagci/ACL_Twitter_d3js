@@ -3,30 +3,35 @@
     "Hashtag": "#justice4mouhamed",
     "name": "%23justice4mouhamed",
     "Entropy": 0.4009769906296373,
-    "Assortativity": 0.552343760688178
+    "Assortativity": 0.552343760688178,
+    "id": 0
   },
   {
     "Hashtag": "#Winnetou",
     "name": "%23Winnetou",
     "Entropy": 0.21199203806455227,
-    "Assortativity": 0.3430566503548639
+    "Assortativity": 0.3430566503548639,
+    "id": 1
   },
   {
     "Hashtag": "#Abbas",
     "name": "%23Abbas",
     "Entropy": 0.3684519770672752,
-    "Assortativity": 0.7332000670405926
+    "Assortativity": 0.7332000670405926,
+    "id": 2
   },
   {
     "Hashtag": "#Gamescom",
     "name": "%23Gamescom",
     "Entropy": 0.1433923773308457,
-    "Assortativity": 0.3910132113149717
+    "Assortativity": 0.3910132113149717,
+    "id": 3
   },
   {
     "Hashtag": "#Kretschmer",
     "name": "%23Kretschmer",
     "Entropy": 0.14277102762274332,
-    "Assortativity": 0.16350619529123503
+    "Assortativity": 0.16350619529123503,
+    "id": 4
   }
 ]
